@@ -28,7 +28,7 @@ const Categories = [
   },
     {
     id: 5,
-    name :"Main course" ,
+    name :"Main_course" ,
     icon :<MdFoodBank className="md:size-8 size-5" />
   },
     {
