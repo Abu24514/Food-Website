@@ -1,0 +1,15 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;500;600;700&display=swap');
+
+/* Tailwind */
+@import "tailwindcss";
+
+/* Theme variables */
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+}
+
+/* Optional: base styling */
+body {
+  @apply font-sans bg-white text-gray-900;
+}
