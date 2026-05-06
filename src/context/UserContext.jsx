@@ -14,9 +14,11 @@ const UserContext = ({ children }) => {
         setShowCart,
     }
     return (
+       
         <div>
             <dataContext.Provider value={data}>
-                {children} // children yaha per app hai
+                {/*  children yaha per app hai */}
+                {children} 
             </dataContext.Provider>
         </div>
     )
