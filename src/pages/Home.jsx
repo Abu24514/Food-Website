@@ -6,6 +6,7 @@ import food_items from "../food";
 import { dataContext } from "../context/UserContext";
 import { IoMdClose } from "react-icons/io";
 import CardSec from "../components/CardSec";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const { cate, setCate, input , showCart  , setShowCart } = useContext(dataContext);
@@ -19,9 +20,8 @@ const Home = () => {
       setCate(newList);
     }
   }
-
-
-  return (
+  const items = useSelector(state => state.cart);
+return (
     <div className="bg-amber-100 min-h-screen">
       <Navbar />
 
@@ -75,7 +75,12 @@ const Home = () => {
           className="hover:text-orange-500 text-lg font-semibold cursor-pointer sm:size-7 size-5 "/></span>
           </header>
           {/* CardSec */}
-         <div className="mt-12">
+         <div className="mt-12 flex w-full flex-col gap-4">
+           {items.map((tm)=>{
+            return(
+              <CardSec name = {tm.name} price={tm.price} image= {tm.image} id={tm.id}  key={tm.id} qty ={tm.qty}/>
+            )
+           })}
          </div>
           
        </div>

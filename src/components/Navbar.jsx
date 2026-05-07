@@ -4,6 +4,7 @@ import { IoFastFood } from 'react-icons/io5'
 import { RiShoppingBag4Line } from 'react-icons/ri'
 import { dataContext } from '../context/UserContext'
 import food_items from '../food'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
 const {input , setInput , cate , setCate , showCart , setShowCart} = useContext(dataContext)
@@ -12,6 +13,9 @@ useEffect(()=>{
   const newList = food_items.filter((ftm)=>ftm.food_name.includes(input) ||ftm.food_name.toLowerCase().includes(input) );
   setCate(newList)
 },[input])
+
+const items = useSelector(state => state.cart);
+console.log(items);
 
 return (
     <div className='flex justify-between items-center px-8 py-6'>
@@ -35,7 +39,7 @@ return (
       <div 
       onClick={()=>setShowCart(true)}
       className=' relative text-white bg-[#FF5200] w-12 h-12  rounded-lg  shadow-xl cursor-pointer hover:scale-110 transition-all duration-150 flex justify-center items-center'>
-       <span className="absolute top-0 right-1 font-bold text-[18px]">0</span>
+       <span className="absolute top-0 right-1 font-bold text-[18px]">{items.length}</span>
         <RiShoppingBag4Line className='size-6' />
       </div>
     </div>
