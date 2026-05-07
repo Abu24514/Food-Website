@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import food_items from "../food";
 import { dataContext } from "../context/UserContext";
 import { IoMdClose } from "react-icons/io";
+import CardSec from "../components/CardSec";
 
 const Home = () => {
   const { cate, setCate, input , showCart  , setShowCart } = useContext(dataContext);
@@ -66,14 +67,17 @@ const Home = () => {
         </div>
       </div>
        
-       <div className= {`sm:w-[45vw] w-[55vw] h-full fixed top-0 right-0 bg-amber-100 shadow-xl sm:px-8 px-4 py-5 transition-all  ${showCart? "translate-x-0" : "translate-x-full duration-300"}`}>
+       <div className= {`md:w-[45vw] w-full h-full fixed top-0 right-0 bg-amber-100 shadow-xl sm:px-8 px-4 py-5 transition-all  ${showCart? "translate-x-0" : "translate-x-full duration-300"}`}>
         <header className="flex justify-between items-center">
           <span className="text-orange-500 sm:text-lg font-semibold text-sm">Order items</span>
           <span className="bg-black/20 rounded-full flex justify-center items-center p-1 " ><IoMdClose  
           onClick={()=>setShowCart(false)}
           className="hover:text-orange-500 text-lg font-semibold cursor-pointer sm:size-7 size-5 "/></span>
-        
           </header>
+          {/* CardSec */}
+         <div className="mt-12">
+         </div>
+          
        </div>
 
     </div>
