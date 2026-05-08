@@ -9,6 +9,7 @@ import CardSec from "../components/CardSec";
 import { useSelector } from "react-redux";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { BiDish } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const { cate, setCate, input, showCart, setShowCart } =
@@ -151,6 +152,9 @@ const Home = () => {
             </span>
           </div>
           <button
+          onClick={()=>{
+            toast.success("order placed")
+          }}
             className=" w-[80%] bg-amber-600 mt-2 rounded-xl p-2 text-white capitalize 
       hover:bg-amber-500 hover:scale-95 transition-all cursor-pointer"
           >
