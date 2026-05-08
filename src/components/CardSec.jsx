@@ -29,8 +29,10 @@ const CardSec = ({name , price , image ,id ,qty}) => {
       {/* Right div */}
       <div className='flex  items-end  justify-center flex-col gap-5 p-3 w-[40%] h-full'>
         <span className='text-lg text-gray-700 font-semibold'>Rs {price}/-</span>
-        <span className='bg-black/20  hover:bg-orange-500/40 text-orange-500 rounded-full p-2 hover:scale-105 transition-all duration-300 cursor-pointer w-10 h-10 flex justify-center items-center'><MdDelete
-        onClick={()=>dispatch(RemoveItem(id))} className='size-6' /></span>
+        <span 
+          onClick={()=>dispatch(RemoveItem(id))}
+        className='bg-black/20  hover:bg-orange-500/40 text-orange-500 rounded-full p-2 hover:scale-105 transition-all duration-300 cursor-pointer w-10 h-10 flex justify-center items-center'><MdDelete
+       className='size-6' /></span>
       </div>
     </div>
   )

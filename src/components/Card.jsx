@@ -42,7 +42,7 @@ const Card = ({ name, image, id, price, type }) => {
       <button
       onClick={()=>dispatch(AddItems({id:id,name :name , price :price , image : image , qty :1}))}
       className="mt-auto bg-amber-600 rounded-xl p-2 text-white capitalize 
-      hover:bg-amber-500 hover:scale-95 transition-all">
+      hover:bg-amber-500 hover:scale-95 transition-all cursor-pointer">
         Add to dish
       </button>
     </div>
