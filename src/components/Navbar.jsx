@@ -15,7 +15,7 @@ useEffect(()=>{
 },[input])
 
 const items = useSelector(state => state.cart);
-console.log(items);
+// console.log(items);
 
 return (
     <div className='flex justify-between items-center px-8 py-6'>

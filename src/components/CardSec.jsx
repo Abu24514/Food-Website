@@ -3,7 +3,7 @@ import image1 from '../assets/image1.avif'
 import { LuDelete } from 'react-icons/lu'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
-import { RemoveItem } from '../redux/cartSlice'
+import { DecrementQty, IncrementQty, RemoveItem } from '../redux/cartSlice'
 const CardSec = ({name , price , image ,id ,qty}) => {
   const dispatch = useDispatch()
   return (
@@ -16,10 +16,17 @@ const CardSec = ({name , price , image ,id ,qty}) => {
         <div className='w-[40%] h-full flex justify-center flex-col gap-4'>
           <span className='text-lg text-gray-700 font-semibold'>{name}</span>
           <div className='w-full bg-white/40  text-orange-500 rounded-2xl p-2 flex shadow-lg overflow-hidden border-2 border-orange-500 font-bold text-lg  gap-2'>
-            <button className='w-[40%] h-full justify-center items-center hover:bg-black/20
+            <button
+            onClick={()=>{
+              qty>1?dispatch(DecrementQty(id)):1
+              }}
+            className='w-[40%] h-full justify-center items-center hover:bg-black/20
                 rounded-full cursor-pointer'>-</button>
             <span className='w-[45%] h-full flex justify-center items-center rounded-lg text-orange-500'>{qty}</span>
-            <button className='w-[40%] h-full justify-center items-center rounded-lg hover:bg-black/20 cursor-pointer'>+</button>
+            <button
+            className='w-[40%] h-full justify-center items-center rounded-lg hover:bg-black/20 cursor-pointer'
+             onClick={()=>{dispatch(IncrementQty(id))}}
+            >+</button>
           </div>
 
         </div>
