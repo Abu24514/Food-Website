@@ -1,16 +1,40 @@
-# React + Vite
+# 🍔 Food Ordering App
+A modern and responsive Food Ordering Application built with React. Users can browse food items, search for dishes, filter by categories, add items to cart, and manage their orders easily.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tech Stack
 
-Currently, two official plugins are available:
+- React.js
+- JavaScript (ES6+)
+- Redux Toolkit
+- Context API
+- React Icons
+- react-toastify
+- Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🍕 Browse food items
+- 🔍 Search food by name
+- 📂 Filter food items by category
+- ➕ Add food items to cart
+- ❌ Remove food items from cart
+- 🛒 Real-time cart management
+- 📱 Fully responsive design
+- ⚡ Fast state management using Redux Toolkit and Context API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 State Management
 
-## Expanding the ESLint configuration
+### Context API
+Used for managing global UI-related states and sharing data across components without prop drilling.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Redux Toolkit
+Used for cart management, including:
+- Add items to cart
+- Remove items from cart
+- Update item quantity
+- Calculate total price
+
+## 📸 Screenshots
+
+### Home Page
+![Food Ordering App](src/assets/home.png)

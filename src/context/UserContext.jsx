@@ -4,7 +4,7 @@ export const dataContext = createContext();
 const UserContext = ({ children }) => {
     const [cate, setCate] = useState(food_items);
     const [input, setInput] = useState("");
-    const [showCart , setShowCart] = useState(false)
+    const [showCart, setShowCart] = useState(false)
     const data = {
         input,
         setInput,
@@ -14,11 +14,11 @@ const UserContext = ({ children }) => {
         setShowCart,
     }
     return (
-       
+
         <div>
             <dataContext.Provider value={data}>
                 {/*  children yaha per app hai */}
-                {children} 
+                {children}
             </dataContext.Provider>
         </div>
     )

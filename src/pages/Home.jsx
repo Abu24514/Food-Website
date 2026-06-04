@@ -16,11 +16,14 @@ const Home = () => {
     useContext(dataContext);
 
   const filterFood = (category) => {
+    console.log(" before condition :" , category); // maan lo Breakfast per click hua  
+    // category = item.name
     if (category === "All") {
       setCate(food_items);
     } else {
       const newList = food_items.filter(
         (f) => f.food_category === category.toLowerCase(),
+        //food iteme - "breakfast"  === Breakfast -> breakfast     
       );
       setCate(newList);
     }
@@ -44,7 +47,7 @@ const Home = () => {
                 className="border rounded-full p-1 sm:p-2 text-black/40 hover:text-[#e1652b]"
               >
                 <div
-                  onClick={() => filterFood(item.name)}
+                  onClick={() => filterFood(item.name)} // filterFood("Breakfast")
                   className="bg-transparent rounded-full flex flex-col justify-center items-center 
               w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 
               text-orange-500 cursor-pointer 
